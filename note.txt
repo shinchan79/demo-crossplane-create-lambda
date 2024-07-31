@@ -1,0 +1,8 @@
+kubectl delete providerconfigs.aws.upbound.io default
+
+kubectl describe providerconfigs.aws.upbound.io default
+kubectl get providerconfigs.aws.upbound.io
+
+# Kiểm tra role:
+kubectl describe role.iam.aws.crossplane.io lambda-execution-role
+kubectl describe rolepolicyattachment.iam.aws.crossplane.io lambda-execution-role-policy
