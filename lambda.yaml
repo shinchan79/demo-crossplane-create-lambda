@@ -1,0 +1,20 @@
+---
+apiVersion: lambda.aws.crossplane.io/v1beta1
+kind: Function
+metadata:
+  name: test-function
+spec:
+  forProvider:
+    code:
+      s3Bucket: yen-codejj
+      s3Key: function.zip
+    handler: index.handler
+    runtime: nodejs18.x
+    region: ap-southeast-1
+    roleRef:
+      name: lambda-execution-role 
+    tags:
+      myKey: myValue
+  providerConfigRef:
+    name: default
+---
